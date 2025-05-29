@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div class="container" id="loginPage">
+    <h1>🔐 Login to Start</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name" required />
+    <input type="text" id="userIdInput" placeholder="Enter your User ID" required />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Homepage -->
+  <div class="container" id="homePage" style="display: none;">
+    <h1>🧠 Welcome to the Quiz App!</h1>
+    <p class="description">Test your knowledge with a quick and fun quiz.</p>
+    <div class="quiz-info">
+      <h3>⏱ Duration: 2 minutes</h3>
+      <h3>📋 Rules:</h3>
+      <ul>
+        <li>Each question has 4 options. Only one is correct.</li>
+        <li>You can’t go back once an answer is selected.</li>
+        <li>Your score will be shown at the end.</li>
+      </ul>
+    </div>
+    <button onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- Quiz Page -->
+  <div class="quiz-container" id="quizPage" style="display: none;">
+    <h2 id="question">Question text</h2>
+    <div id="options"></div>
+    <button onclick="nextQuestion()" id="nextBtn" style="display: none;">Next</button>
+  </div>
+
+  <!-- Result Page -->
+  <div class="result-container" id="resultPage" style="display: none;">
+    <h2>Quiz Completed!</h2>
+    <p id="score"></p>
+    <button onclick="submitQuiz()">Submit</button>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
